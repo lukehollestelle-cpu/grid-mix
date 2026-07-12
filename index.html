@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grid Mix — A Narrative Visualization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="room">
+
+    <header class="room-header">
+    <div class="breadcrumb" id="breadcrumb">
+      <span class="crumb crumb-root active" data-view="overview">OVERVIEW</span>
+      <span class="crumb-sep" id="crumb-sep" hidden>&rsaquo;</span>
+      <span class="crumb crumb-branch" id="crumb-branch" hidden></span>
+    </div>
+    <div class="room-title">
+      <h1>THE GRID MIX</h1>
+      <p class="room-subtitle">How solar &amp; wind reshaped global electricity, 1985&ndash;2025</p>
+    </div>
+    <div class="meter-wrap">
+      <svg id="mix-meter" viewBox="0 0 200 150" aria-label="Renewable electricity share meter"></svg>
+      <div class="meter-label" id="meter-label">GLOBAL &middot; 2025</div>
+    </div>
+  </header>
+
+  <div class="pylon-divider" aria-hidden="true">
+    <svg width="100%" height="14" preserveAspectRatio="none"><line x1="0" y1="7" x2="100%" y2="7"></line></svg>
+  </div>
+
+    <main class="room-main">
+    <svg id="chart" viewBox="0 0 860 460" preserveAspectRatio="xMidYMid meet"></svg>
+    <div id="tooltip" class="tooltip" hidden></div>
+  </main>
+
+    <section class="readout-panel">
+    <div class="readout-scene-label" id="readout-scene-label">OVERVIEW</div>
+    <p class="readout-text" id="readout-text"></p>
+  </section>
+
+    <footer class="room-controls">
+
+    <button id="btn-back" class="room-btn back-btn" hidden>&#9664; BACK TO OVERVIEW</button>
+
+    <div class="branch-buttons" id="branch-buttons">
+      <button id="btn-source" class="room-btn branch-btn source-btn">EXPLORE THE SOURCES &#9656;</button>
+      <button id="btn-country" class="room-btn branch-btn country-btn">EXPLORE THE COUNTRIES &#9656;</button>
+    </div>
+
+    <div class="source-controls" id="source-controls" hidden>
+      <div class="legend-toggles" id="legend-toggles"></div>
+      <p class="explore-hint">Click a source to show or hide it. Hover the lines for exact values.</p>
+    </div>
+
+    <div class="country-controls" id="country-controls" hidden>
+      <div class="country-search-wrap">
+        <label for="country-search">FIND A COUNTRY</label>
+        <input type="text" id="country-search" class="console-input" placeholder="e.g. Norway, Vietnam...">
+      </div>
+      <div class="gen-slider-wrap">
+        <label for="gen-slider">MIN. GRID SIZE: <span id="gen-slider-label">5 TWh</span></label>
+        <input type="range" id="gen-slider" min="5" max="500" value="5" step="5">
+      </div>
+      <p class="explore-hint">Hover any dot for details. The meter above updates to match.</p>
+    </div>
+
+  </footer>
+
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-svg-annotation@2.5.1/d3-annotation.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
