@@ -119,9 +119,9 @@ function setMeter(value) {
 buildMeter();
 
 const READOUT_COPY = {
-  overview: `For 25 years renewables held steady at about a fifth of the world's electricity, almost all of it hydropower. Then, starting around 2010, that share began to surge. By 2025 it reached ${fmtPct(GLOBAL_SHARE_2025)}%, driven almost entirely by solar and wind. Pick a storyline below to see how.`,
-  source: `Solar and wind were rounding errors as recently as 2010. Since then, solar output has grown roughly 85 times over and wind nearly 8 times over. Solar alone added more electricity since 2020 (plus 1,925 TWh) than wind managed in its first 30 years combined (plus 1,588 TWh). Hydro, once nearly all of the world's renewable power, has barely doubled since 1985.`,
-  country: `Scale and share are different stories. China now generates more solar and wind electricity than the United States, Germany, and Japan combined, yet fossil fuels still dominate its enormous grid. Meanwhile small systems like Norway and Costa Rica already run almost entirely on renewables. Hover any point to compare countries.`
+  overview: `For 25 years renewable consistently represented about a fifth of the world's electricity (Most of that being represented by hydropower). Then in 2010, that fraction began to increase drastically. By 2025 it reached ${fmtPct(GLOBAL_SHARE_2025)}%, driven almost entirely by solar and wind. Choose a storyline below to see the trend.`,
+  source: `Solar and wind were negligible before around 2010. Since then, solar output has grown roughly 85x and wind nearly 8x. Solar alone added more electricity since 2020 (~1,900 TWh) than wind managed in its first 30 years combined (~1,600 TWh). Hydropower, once nearly all of the world's renewable power, has barely doubled since 1985.`,
+  country: `Scale and share don't necessarily correlate as much as you would think. For example, China currently generates more solar and wind electricity than the US, Germany, and Japan combined, but fossil fuels still dominate its overall power consumption. Meanwhile smaller countries like Norway and Costa Rica already run almost entirely on renewables. Hover over any point to compare countries.`
 };
 
 const SCENE_LABEL = { overview: "OVERVIEW", source: "SOURCE STORY", country: "COUNTRY STORY" };
