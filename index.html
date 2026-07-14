@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grid Mix: A Narrative Visualization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="room">
+
+    <header class="room-header">
+    <div class="breadcrumb" id="breadcrumb">
+      <span class="crumb crumb-root active" data-view="overview">OVERVIEW</span>
+      <span class="crumb-sep" id="crumb-sep" hidden><svg class="chevron chevron-right" viewBox="0 0 12 12" aria-hidden="true"><path d="M3,1 L9,6 L3,11"></path></svg></span>
+      <span class="crumb crumb-branch" id="crumb-branch" hidden></span>
+    </div>
+    <div class="room-title">
+      <svg class="wordmark" viewBox="0 0 320 56" role="img" aria-label="The Grid Mix">
+        <path class="wordmark-bracket" d="M3,3 L3,15 M3,3 L15,3"></path>
+        <path class="wordmark-bracket" d="M317,3 L317,15 M317,3 L305,3"></path>
+        <path class="wordmark-bracket" d="M3,53 L3,41 M3,53 L15,53"></path>
+        <path class="wordmark-bracket" d="M317,53 L317,41 M317,53 L305,53"></path>
+        <text x="160" y="29" text-anchor="middle" class="wordmark-text">THE GRID MIX</text>
+        <line x1="60" y1="40" x2="260" y2="40" class="wordmark-rule"></line>
+        <g class="wordmark-ticks">
+          <line x1="60" y1="37" x2="60" y2="43"></line>
+          <line x1="80" y1="37" x2="80" y2="43"></line>
+          <line x1="100" y1="37" x2="100" y2="43"></line>
+          <line x1="120" y1="37" x2="120" y2="43"></line>
+          <line x1="140" y1="37" x2="140" y2="43"></line>
+          <line x1="160" y1="37" x2="160" y2="43"></line>
+          <line x1="180" y1="37" x2="180" y2="43"></line>
+          <line x1="200" y1="37" x2="200" y2="43"></line>
+          <line x1="220" y1="37" x2="220" y2="43"></line>
+          <line x1="240" y1="37" x2="240" y2="43"></line>
+          <line x1="260" y1="37" x2="260" y2="43"></line>
+        </g>
+      </svg>
+      <p class="room-subtitle">How solar &amp; wind reshaped global electricity, 1985 to 2025</p>
+    </div>
+    <div class="meter-wrap">
+      <svg id="mix-meter" viewBox="0 0 200 150" aria-label="Renewable electricity share meter"></svg>
+      <div class="meter-label" id="meter-label">GLOBAL &middot; 2025</div>
+    </div>
+  </header>
+
+  <main class="room-main">
+    <svg id="chart" viewBox="0 0 860 460" preserveAspectRatio="xMidYMid meet"></svg>
+    <div id="tooltip" class="tooltip" hidden></div>
+  </main>
+
+    <section class="readout-panel">
+    <div class="readout-scene-label" id="readout-scene-label">OVERVIEW</div>
+    <p class="readout-text" id="readout-text"></p>
+  </section>
+
+    <footer class="room-controls">
+
+    <button id="btn-back" class="room-btn back-btn" hidden><svg class="chevron chevron-left" viewBox="0 0 12 12" aria-hidden="true"><path d="M9,1 L3,6 L9,11"></path></svg> BACK TO OVERVIEW</button>
+
+    <div class="branch-buttons" id="branch-buttons">
+      <button id="btn-source" class="room-btn branch-btn source-btn">EXPLORE THE SOURCES <svg class="chevron chevron-right" viewBox="0 0 12 12" aria-hidden="true"><path d="M3,1 L9,6 L3,11"></path></svg></button>
+      <button id="btn-country" class="room-btn branch-btn country-btn">EXPLORE THE COUNTRIES <svg class="chevron chevron-right" viewBox="0 0 12 12" aria-hidden="true"><path d="M3,1 L9,6 L3,11"></path></svg></button>
+    </div>
+
+    <div class="source-controls" id="source-controls" hidden>
+      <div class="legend-toggles" id="legend-toggles"></div>
+      <p class="explore-hint">Click a source to show or hide it. Hover the lines for exact values.</p>
+    </div>
+
+    <div class="country-controls" id="country-controls" hidden>
+      <div class="country-search-wrap">
+        <label for="country-search">FIND A COUNTRY</label>
+        <input type="text" id="country-search" class="console-input" placeholder="e.g. Norway, Vietnam...">
+      </div>
+      <div class="gen-slider-wrap">
+        <label for="gen-slider">MIN. GRID SIZE: <span id="gen-slider-label">5 TWh</span></label>
+        <input type="range" id="gen-slider" min="5" max="500" value="5" step="5">
+      </div>
+      <p class="explore-hint">Hover any dot for details. The meter above updates to match.</p>
+    </div>
+
+  </footer>
+
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-svg-annotation@2.5.1/d3-annotation.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
